@@ -426,16 +426,19 @@
   VeronneSelect.prototype.positionPanel = function (fromScroll) {
     if (!this.isOpen) return;
     var rect = this.trigger.getBoundingClientRect();
+    var header = document.querySelector('.site-header');
+    var headerBottom = header ? header.getBoundingClientRect().bottom : 0;
 
-    if (fromScroll && (rect.bottom < -12 || rect.top > global.innerHeight + 12)) {
+    if (fromScroll && (rect.bottom < headerBottom + 4 || rect.top > global.innerHeight - 4)) {
       this.close(false);
       return;
     }
 
     var margin = 8;
     var gap = 4;
-    var spaceBelow = global.innerHeight - rect.bottom - margin - gap;
-    var spaceAbove = rect.top - margin - gap;
+    var spaceBelow = Math.max(0, global.innerHeight - rect.bottom - margin - gap);
+    var topLimit = Math.max(margin, headerBottom + margin);
+    var spaceAbove = Math.max(0, rect.top - topLimit - gap);
     var width = Math.min(Math.max(rect.width, 210), global.innerWidth - margin * 2);
 
     this.panel.style.width = width + 'px';
@@ -443,15 +446,17 @@
 
     var naturalHeight = Math.min(this.panel.scrollHeight || 260, 320);
     var openAbove = spaceBelow < Math.min(naturalHeight, 180) && spaceAbove > spaceBelow;
-    var maxAllowed = Math.max(130, openAbove ? spaceAbove : spaceBelow);
+    var available = openAbove ? spaceAbove : spaceBelow;
+    var maxAllowed = Math.min(320, available);
     var finalHeight = Math.min(naturalHeight, maxAllowed);
 
     this.panel.style.maxHeight = maxAllowed + 'px';
 
     if (openAbove) {
-      this.panel.style.top = Math.max(margin, rect.top - gap - finalHeight) + 'px';
+      this.panel.style.top = Math.max(topLimit, rect.top - gap - finalHeight) + 'px';
     } else {
-      this.panel.style.top = (rect.bottom + gap) + 'px';
+      var topPos = Math.min(rect.bottom + gap, Math.max(margin, global.innerHeight - margin - finalHeight));
+      this.panel.style.top = topPos + 'px';
     }
 
     var isRtl = root.getAttribute('dir') === 'rtl';

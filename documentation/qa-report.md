@@ -2,49 +2,38 @@
 
 ## Environment & Scope
 
-- **Browser Engine Tested**: Headless Chromium (Brave Browser via Chrome DevTools Protocol) served over local HTTP (`127.0.0.1:8765`).
+- **Browser Engine Tested**: Headless Chromium (Brave Browser via Chrome DevTools Protocol) served over local HTTP (`127.0.0.1:8770`).
+- **Safari / WebKit Note**: Attempted `safaridriver` automation check; Safari WebDriver returned `"You must enable 'Allow remote automation' in the Developer section of Safari Settings to control Safari via WebDriver."` Consequently, automated WebKit/Safari execution was unavailable in this environment and browser verification reflects Chromium only.
 - **Pages Tested (7)**: `index.html`, `pages/home2.html`, `pages/about.html`, `pages/products.html`, `pages/brands.html`, `pages/gifting.html`, `pages/contact.html`.
-- **Viewports Tested (9)**:
+- **Viewports Tested (8 in final pass; 1920px also verified in initial pass)**:
   - Mobile: `320×568`, `390×844`, `430×932`
   - Tablet: `768×1024`, `820×1180`, `1024×768`
-  - Desktop: `1280×800`, `1440×900`, `1920×1080`
+  - Desktop: `1280×800`, `1440×900` (plus `1920×1080` in initial matrix)
 - **Themes & Directions**: Light & Dark (`#0B0C0E` / `#141619`), LTR & RTL (`dir="rtl"`).
 
-## Automated & Visual Matrix Results (Final Run)
+## Automated & Visual Matrix Results (Final Polishing Pass)
 
-- **Matrix checkpoints**: `63` (7 pages × 9 viewports)
+- **Matrix checkpoints**: `56` (7 pages × 8 viewports)
 - **Horizontal / Navbar overflows**: `0`
 - **Broken images (`naturalWidth === 0`)**: `0`
-- **Aspect-ratio distortion issues (>1.85×)**: `0`
 - **Console / uncaught JS runtime errors**: `0`
+- **Home 2 Curated Gift Selections Alignment**: `titleTopSpread: 0px`, `footerTopSpread: 0px` across all 4 cards.
+- **Dropdown Regression Suite (20 expanded checks across Desktop `1440×900`, Tablet `768×1024`, Mobile `320×568` and `390×844`)**:
+  - `20 / 20` passed (`inViewport: true`, `noHeaderOverlap: true`, `anchoredClose: true`, `optionFontPx: 15`, `optionHeight: 44`, `syncedValue: true`).
 
-## Functional Journeys Verified
+## Final Polishing Corrections Verified
 
-1. **Catalogue Filtering & Category-Aware Controls (`pages/products.html`)**:
-   - Watches filter displays `Movement Type` (`Showing 6 of 24 showroom pieces`).
-   - Switching to Gold Jewellery replaces movement filter with `Finish & Metal Tone` (`Showing 6 of 24 showroom pieces`).
-   - Product detail modal opens with full specifications and `Enquire About This Piece` link (`../pages/contact.html?product=gold-aurelia-chain&category=gold`).
-2. **Custom Accessible Dropdowns (`VeronneSelect`)**:
-   - Tested actually expanded on desktop (`1440×900`) and mobile (`390×844`) while page was scrolled.
-   - Confirmed `15px` option font-size, `44px` option height, viewport collision containment, anchored positioning, and auto-closing on modal open / category refresh.
-3. **Mobile Drawer & RTL Persistence**:
-   - Verified `#mobileDrawer` opens at `left: 0` (`width: 343px`) in both LTR and RTL at `390×844`.
-   - Verified Dark Mode and RTL toggles inside the drawer persist across page navigation (`index.html` and `pages/home2.html`).
-4. **Gifting Discovery (`pages/gifting.html`)**:
-   - Occasion filter (`Weddings`) updates live results (`Showing 9 gift suggestions`).
-5. **Contact & Visit Request Builder (`pages/contact.html`)**:
-   - Preselection from `?product=watch-fluted-bicolour` populates `category=watches` and `product=watch-fluted-bicolour`.
-   - Past dates (`2020-01-01`) are rejected; valid future dates render the local Prepared Request Summary for review, edit, clipboard copy, and `.txt` download.
-
-## Defects Identified & Fixed During QA
-
-1. **Mobile Form Grid Expansion**: Preselected long product names in `.v-select` expanded CSS grid columns (`429px` on `390px` viewport); resolved by adding `min-width: 0` across `.contact-layout > *`, `.form-grid > *`, `.form-field`, `.v-select`, `.v-select__trigger`, and `.v-select__value`.
-2. **Open Dropdown Layering Over Modal / Tab Change**: Closed active custom dropdowns automatically on `syncOptions()`, `openProductModal()`, and outside clicks.
-3. **Scroll-Reveal & Carousel Lazy Loading**: Added viewport-safe reveal initialization and eager loading on the 6 Featured Timepieces carousel slides so no section or slide renders blank.
-4. **Mobile Hero Portrait Framing & Grid Balance**: Added responsive `<picture>` portrait hero sources for `<= 680px` and balanced the catalogue to 24 pieces (6 per category) to eliminate orphaned grid cards on desktop and tablet.
+1. **Icon-Only Theme Control**: Removed `"Dark"` / `"Light"` text labels from `.js-theme-toggle` across all 7 desktop headers and mobile drawers while preserving `aria-label`, `aria-pressed`, and `localStorage` persistence.
+2. **Simplified Home Dropdown & Navigation**: Renamed dropdown, drawer, and footer Home links cleanly to `Home 1` and `Home 2`, removing subtitle text and internal labels.
+3. **Home 1 — The Jewellery Edit**: Replaced `justify-content: space-between` with consistent `1.25rem` spacing and adjusted the lead frame to `1:1` alongside `204px`-min-height stacked row cards for balanced columns.
+4. **Home 1 — Closing Showroom CTA**: Removed the secondary `"View Editorial Home 2"` button, leaving the single primary **Plan a Showroom Visit** CTA.
+5. **Home 2 — Curated Gift Selections & Shared Cards**: Added consistent 2-line minimum block heights on `.product-card__title`, `.product-card__material`, and 4-column `.product-card__meta` so card rows, divider lines, prices, and buttons align cleanly.
+6. **Home 2 — Choosing a Timepiece That Fits Your Rhythm**: Replaced the awkward bullet list with three stacked specification blocks (**Case Size**, **Movement**, **Strap & Bracelet**).
+7. **Footer Cleanup**: Removed `.footer-wordmark-band` and `.footer-wordmark-giant` across all 7 pages and `assets/css/style.css`, keeping the multi-column footer concise.
+8. **Dropdown Viewport Bounds & Tablet Grids**: Clamped `VeronneSelect.positionPanel` height strictly to available viewport space below the sticky header (`<= 320px` and never forced above available space), and preserved 2-col diptych and 3-col occasion grid balance on `768px`–`1024px` tablets.
 
 ## Remaining Production Limitations
 
 - **Frontend-Only Enquiry Flow**: No backend API or email gateway is connected; the Contact form validates and prepares a local request summary for review, copy, or `.txt` download.
 - **Venue & Stock Details**: Representative showroom photography, indicative prices, and editorial watchmaker profiles are illustrative until actual salon address, hours, and live inventory are configured in `assets/js/site-config.js` and `assets/js/products-data.js`.
-- **Safari/WebKit**: Verified in Chromium (Brave headless CDP); physical Safari/iOS WebKit hardware testing was not run in this environment.
+- **Safari/WebKit**: Not executed locally because Safari Remote Automation (`Allow remote automation`) is disabled in Safari Settings.
