@@ -1,0 +1,82 @@
+/* ==========================================================================
+   VERONNE — Dark Mode Theme (True Neutral Near-Black, Never Muddy/Brown)
+   ========================================================================== */
+
+html[data-theme="dark"] {
+  --bg-page: #0B0C0E;
+  --bg-surface: #141619;
+  --bg-surface-muted: #181A1D;
+  --bg-elevated: #1D2024;
+  --bg-dark-band: #0E1013;
+  --bg-dark-band-elevated: #17191D;
+
+  --text-primary: #F3F3F1;
+  --text-secondary: #B4B7BD;
+  --text-muted: #989CA3;
+  --text-on-dark: #F3F3F1;
+  --text-on-dark-muted: #B4B7BD;
+
+  --accent: #C8B38D;
+  --accent-hover: #D9C6A5;
+  --accent-soft: rgba(200, 179, 141, 0.14);
+  --accent-border: rgba(200, 179, 141, 0.45);
+
+  --border-subtle: rgba(255, 255, 255, 0.11);
+  --border-strong: rgba(255, 255, 255, 0.24);
+  --border-on-dark: rgba(255, 255, 255, 0.12);
+
+  --header-bg: rgba(11, 12, 14, 0.90);
+  --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 14px 36px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.65);
+}
+
+html[data-theme="dark"] .btn--primary {
+  background-color: #F3F3F1;
+  color: #0B0C0E;
+  border-color: #F3F3F1;
+}
+
+html[data-theme="dark"] .btn--primary:hover {
+  background-color: #C8B38D;
+  border-color: #C8B38D;
+  color: #0B0C0E;
+}
+
+html[data-theme="dark"] .btn--accent {
+  background-color: #C8B38D;
+  border-color: #C8B38D;
+  color: #0B0C0E;
+}
+
+html[data-theme="dark"] .btn--accent:hover {
+  background-color: #D9C6A5;
+  border-color: #D9C6A5;
+}
+
+html[data-theme="dark"] .v-select-option[aria-selected="true"] {
+  color: #C8B38D;
+}
+
+html[data-theme="dark"] .form-error {
+  color: #F87171;
+}
+
+html[data-theme="dark"] .form-field.has-error .form-input,
+html[data-theme="dark"] .form-field.has-error .form-textarea,
+html[data-theme="dark"] .form-field.has-error .v-select__trigger {
+  border-color: #F87171;
+}
+
+html[data-theme="dark"] input[type="date"],
+html[data-theme="dark"] input[type="time"] {
+  color-scheme: dark;
+}
+
+html[data-theme="dark"] .back-to-top {
+  background-color: var(--bg-elevated);
+}
+
+html[data-theme="dark"] .media-frame--white {
+  background-color: #1A1C20;
+}

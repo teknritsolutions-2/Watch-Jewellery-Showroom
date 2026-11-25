@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="site-root" content="..">
+  <title>Contact &amp; Showroom Visit | VERONNE</title>
+  <meta name="description" content="Prepare a showroom visit or piece enquiry at VERONNE. Review, edit, copy, or download your consultation request.">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('veronne_theme');
+        var d = localStorage.getItem('veronne_dir');
+        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+        if (d === 'rtl' || d === 'ltr') document.documentElement.setAttribute('dir', d);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="../assets/css/style.css?v=1.0">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css?v=1.0">
+  <link rel="stylesheet" href="../assets/css/rtl.css?v=1.0">
+  <link rel="stylesheet" href="../assets/css/products.css?v=1.0">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand-mark" href="../index.html" aria-label="VERONNE Home">
+        <svg class="brand-mark__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <polygon points="24,4 38.1,9.9 44,24 38.1,38.1 24,44 9.9,38.1 4,24 9.9,9.9" stroke="currentColor" stroke-width="1.6"/>
+          <polygon points="24,9 34.6,13.4 39,24 34.6,34.6 24,39 13.4,34.6 9,24 13.4,13.4" stroke="currentColor" stroke-width="0.75" opacity="0.45"/>
+          <path d="M15.5 16L24 33.5L32.5 16" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"/>
+          <circle cx="24" cy="14" r="1.6" fill="#927B57"/>
+        </svg>
+        <span class="brand-mark__wordmark">VERONNE</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <div class="nav-dropdown">
+          <button type="button" class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">
+            <span>Home</span>
+            <svg class="nav-dropdown__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown__menu" role="menu">
+            <a class="nav-dropdown__item" href="../index.html" role="menuitem">
+              <span class="nav-dropdown__title">Home 1 — Showroom Storefront</span>
+              <span class="nav-dropdown__meta">New collections, timepieces &amp; jewellery</span>
+            </a>
+            <a class="nav-dropdown__item" href="./home2.html" role="menuitem">
+              <span class="nav-dropdown__title">Home 2 — Editorial Experience</span>
+              <span class="nav-dropdown__meta">The art of time &amp; adornment</span>
+            </a>
+          </div>
+        </div>
+        <a class="nav-link" href="./about.html">About</a>
+        <a class="nav-link" href="./products.html">Products</a>
+        <a class="nav-link" href="./brands.html">Brands</a>
+        <a class="nav-link" href="./gifting.html">Gifting</a>
+        <a class="nav-link" href="./contact.html" aria-current="page">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="utility-btn js-theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="display:none;" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <span class="js-theme-label">Dark</span>
+        </button>
+        <button type="button" class="utility-btn js-dir-toggle" aria-pressed="false" aria-label="Switch text direction to RTL">
+          <span class="js-dir-label">RTL</span>
+        </button>
+        <a class="btn btn--primary header-cta" href="./contact.html">Visit Showroom</a>
+      </div>
+
+      <button type="button" class="hamburger-btn" id="mobileMenuOpen" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation" aria-hidden="true">
+    <div class="mobile-drawer__head">
+      <a class="brand-mark" href="../index.html">
+        <svg class="brand-mark__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <polygon points="24,4 38.1,9.9 44,24 38.1,38.1 24,44 9.9,38.1 4,24 9.9,9.9" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M15.5 16L24 33.5L32.5 16" stroke="currentColor" stroke-width="1.9" stroke-linecap="square"/>
+          <circle cx="24" cy="14" r="1.6" fill="#927B57"/>
+        </svg>
+        <span class="brand-mark__wordmark">VERONNE</span>
+      </a>
+      <button type="button" class="drawer-close-btn" id="mobileMenuClose" aria-label="Close navigation menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="mobile-drawer__body">
+      <nav class="mobile-nav-list" aria-label="Mobile Menu">
+        <span class="mobile-nav-group-label">Showroom Home</span>
+        <a class="mobile-nav-link" href="../index.html">Home 1 — Storefront</a>
+        <a class="mobile-nav-link" href="./home2.html">Home 2 — Editorial</a>
+        <span class="mobile-nav-group-label">Explore</span>
+        <a class="mobile-nav-link" href="./about.html">About</a>
+        <a class="mobile-nav-link" href="./products.html">Products</a>
+        <a class="mobile-nav-link" href="./brands.html">Brands</a>
+        <a class="mobile-nav-link" href="./gifting.html">Gifting</a>
+        <a class="mobile-nav-link" href="./contact.html" aria-current="page">Contact</a>
+      </nav>
+      <a class="btn btn--primary" href="./contact.html">Visit Showroom</a>
+      <div class="mobile-drawer__utilities">
+        <button type="button" class="utility-btn js-theme-toggle" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="display:none;" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <span class="js-theme-label">Dark</span>
+        </button>
+        <button type="button" class="utility-btn js-dir-toggle" aria-pressed="false">
+          <span class="js-dir-label">RTL</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero__grid">
+        <div class="page-hero__copy">
+          <span class="eyebrow">Private Salon &amp; Enquiries</span>
+          <h1 class="display-xl">Plan Your Showroom Visit</h1>
+          <p class="lead">
+            Prepare a viewing request for watches, engagement rings, or fine jewellery. Review your summary below, edit details, and copy or download your prepared brief.
+          </p>
+        </div>
+        <div class="media-frame ratio-4-3">
+          <img src="../assets/images/lifestyle/editorial-watch-book.jpg" alt="Luxury wristwatch displayed in warm study lighting beside open editorial volume" width="1600" height="1280">
+        </div>
+      </div>
+    </section>
+
+    <!-- Aligned with site gutters: Contact Form + Showroom Visit Information -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head" style="margin-bottom:2rem;">
+          <div class="section-head__copy">
+            <span class="eyebrow">Visit Request Builder</span>
+            <h2 class="display-lg">Prepare a Consultation Request</h2>
+            <p class="lead">
+              This static website validates and formats your consultation request locally for review—it does not transmit data to a live booking server.
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-layout">
+          <div class="contact-panel">
+            <form id="visitEnquiryForm" novalidate>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label class="form-label" for="visitName">Full Name <span class="form-label__req">*</span></label>
+                  <input class="form-input" type="text" id="visitName" name="fullName" autocomplete="name" placeholder="Your full name" required>
+                  <span class="form-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="visitEmail">Email Address <span class="form-label__req">*</span></label>
+                  <input class="form-input" type="email" id="visitEmail" name="email" autocomplete="email" placeholder="name@example.com" required>
+                  <span class="form-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="visitPhone">Telephone <span class="form-label__req">*</span></label>
+                  <input class="form-input" type="tel" id="visitPhone" name="phone" autocomplete="tel" placeholder="+91 98000 00000" required>
+                  <span class="form-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="visitCategory">Product Category <span class="form-label__req">*</span></label>
+                  <select id="visitCategory" name="category" data-v-select required>
+                    <option value="all">All Collections</option>
+                    <option value="gold">Gold Jewellery</option>
+                    <option value="diamonds">Diamond Jewellery</option>
+                    <option value="silver">Silver Jewellery</option>
+                    <option value="watches">Watches</option>
+                  </select>
+                  <span class="form-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="visitProduct">Product Interest</label>
+                  <select id="visitProduct" name="productInterest" data-v-select>
+                    <option value="General Collection Viewing">General Collection Viewing</option>
+                  </select>
+                  <span class="form-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="visitBrand">Preferred Brand (Where Applicable)</label>
+                  <select id="visitBrand" name="preferredBrand" data-v-select>
+                    <option value="No brand preference">No brand preference / Jewellery selection</option>
+                  </select>
+                  <span class="form-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="visitPurpose">Purpose of Visit <span class="form-label__req">*</span></label>
+                  <select id="visitPurpose" name="purpose" data-v-select required>
+                    <option value="">Select purpose...</option>
+                    <option value="Private Viewing">Private Viewing</option>
+                    <option value="Timepiece Consultation">Timepiece Consultation</option>
+                    <option value="Jewellery Styling">Jewellery Styling</option>
+                    <option value="Bridal &amp; Engagement Selection">Bridal &amp; Engagement Selection</option>
+                    <option value="Gifting Consultation">Gifting Consultation</option>
+                    <option value="Collection Discovery">Collection Discovery</option>
+                  </select>
+                  <span class="form-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="visitDate">Preferred Date <span class="form-label__req">*</span></label>
+                  <input class="form-input" type="date" id="visitDate" name="preferredDate" required>
+                  <span class="form-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="visitTime">Preferred Time <span class="form-label__req">*</span></label>
+                  <input class="form-input" type="time" id="visitTime" name="preferredTime" value="14:30" required>
+                  <span class="form-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-field form-field--full">
+                  <label class="form-label" for="visitNotes">Additional Notes</label>
+                  <textarea class="form-textarea" id="visitNotes" name="notes" placeholder="Share preferred case diameters, ring sizes, metal tones, or pieces you would like compared..."></textarea>
+                  <span class="form-error" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:0.85rem;align-items:center;">
+                <button type="submit" class="btn btn--primary">Prepare Request Summary</button>
+                <span style="font-size:0.875rem;color:var(--text-secondary);">Client-side validation &amp; preview only; no booking is transmitted automatically.</span>
+              </div>
+            </form>
+
+            <!-- Prepared Request Review Panel -->
+            <div class="request-summary-card" id="requestSummaryCard" hidden aria-live="polite">
+              <span class="eyebrow">Prepared Enquiry Preview</span>
+              <h3 class="display-sm">Review Your Showroom Request</h3>
+              <p style="margin-top:0.5rem;color:var(--text-secondary);">
+                Your details have been compiled below. You may edit your inputs, copy the formatted text, or download a local copy—no remote reservation has been booked.
+              </p>
+              <div class="request-summary-grid" id="requestSummaryGrid"></div>
+              <div style="display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center;">
+                <button type="button" class="btn btn--primary" id="copyRequestBtn">Copy Request</button>
+                <button type="button" class="btn btn--accent" id="downloadRequestBtn">Download .TXT</button>
+                <button type="button" class="btn btn--outline" id="editRequestBtn">Edit Request</button>
+              </div>
+              <p id="copyFeedback" style="margin-top:0.75rem;font-size:0.875rem;color:var(--accent);" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <aside class="contact-sidebar">
+            <div class="info-box">
+              <span class="eyebrow">Showroom Information</span>
+              <h3>Salon Details</h3>
+              <p style="color:var(--text-secondary);">
+                Exact showroom street address, direct salon telephone number, and daily operating hours will be published here upon final venue confirmation.
+              </p>
+              <p style="color:var(--text-secondary);">
+                Use the request builder alongside to prepare your preferred pieces, date, and sizing notes ahead of personal confirmation.
+              </p>
+            </div>
+
+            <div class="info-box">
+              <span class="eyebrow">Before You Visit</span>
+              <h3>What to Consider</h3>
+              <ul class="split-feature__list" style="margin-top:0.25rem;">
+                <li>Note comfortable wristwatch case diameters (for example, 36mm dress vs. 40–41mm sport).</li>
+                <li>Bring an existing ring if checking sizing or pairing a wedding band alongside an engagement solitaire.</li>
+                <li>Compare yellow, rose, and white metal tones against natural daylight during your session.</li>
+              </ul>
+            </div>
+
+            <div class="info-box">
+              <span class="eyebrow">Browse First</span>
+              <h3>Quick Collection Links</h3>
+              <div style="display:flex;flex-direction:column;gap:0.65rem;margin-top:0.75rem;">
+                <a class="text-link" href="./products.html?category=watches">Watches Catalogue</a>
+                <a class="text-link" href="./products.html?category=gold">Gold Jewellery</a>
+                <a class="text-link" href="./products.html?category=diamonds">Diamond Jewellery</a>
+                <a class="text-link" href="./products.html?category=silver">Silver Jewellery</a>
+                <a class="text-link" href="./gifting.html">Gifting Guide</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section--surface" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__copy">
+            <span class="eyebrow">Showroom FAQ</span>
+            <h2 class="display-lg">Frequently Asked Questions</h2>
+          </div>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-1">
+              <span>Does submitting the form confirm an immediate showroom appointment?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-panel" id="faq-1" hidden>
+              <p>No. This static storefront builds and validates a structured enquiry preview that you can review, copy, or download locally. Actual appointment times and piece availability are confirmed directly once submitted to the showroom team.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-2">
+              <span>Are all watchmakers listed on the Brands page guaranteed to be in stock?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-panel" id="faq-2" hidden>
+              <p>The Brands page provides editorial discovery across celebrated Swiss and Japanese watchmakers. Specific references and current viewing availability are always verified on enquiry before your visit.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-3">
+              <span>Can I compare multiple watch sizes or jewellery metals in one session?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-panel" id="faq-3" hidden>
+              <p>Yes. Mention any reference IDs, case diameters, or metal tones in the Additional Notes field so comparable pieces can be prepared side by side.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-4">
+              <span>Are indicative prices shown on the catalogue final?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-panel" id="faq-4" hidden>
+              <p>All catalogue prices are indicative figures for planning and budget comparison. Final pricing depends on exact sizing, stone specifications, and prevailing showroom quotes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand-mark" href="../index.html">
+            <svg class="brand-mark__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <polygon points="24,4 38.1,9.9 44,24 38.1,38.1 24,44 9.9,38.1 4,24 9.9,9.9" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M15.5 16L24 33.5L32.5 16" stroke="currentColor" stroke-width="1.9" stroke-linecap="square"/>
+              <circle cx="24" cy="14" r="1.6" fill="#C8B38D"/>
+            </svg>
+            <span class="brand-mark__wordmark">VERONNE</span>
+          </a>
+          <p class="footer-brand__desc">
+            A contemporary watch and fine jewellery showroom dedicated to considered horology, architectural precious metals, and unhurried private consultations.
+          </p>
+        </div>
+        <div>
+          <h3 class="footer-col__title">Showroom</h3>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home 1 — Storefront</a></li>
+            <li><a href="./home2.html">Home 2 — Editorial</a></li>
+            <li><a href="./about.html">About VERONNE</a></li>
+            <li><a href="./brands.html">Watchmakers &amp; Brands</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col__title">Collections</h3>
+          <ul class="footer-links">
+            <li><a href="./products.html">All Pieces</a></li>
+            <li><a href="./products.html?category=gold">Gold Jewellery</a></li>
+            <li><a href="./products.html?category=diamonds">Diamond Jewellery</a></li>
+            <li><a href="./products.html?category=silver">Silver Jewellery</a></li>
+            <li><a href="./products.html?category=watches">Watches</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col__title">Client Services</h3>
+          <ul class="footer-links">
+            <li><a href="./gifting.html">Gifting Guide</a></li>
+            <li><a href="./contact.html">Plan a Showroom Visit</a></li>
+            <li><a href="./contact.html#faq">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-wordmark-band" aria-hidden="true">
+        <div class="footer-wordmark-giant">VERONNE</div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 VERONNE Showroom. Client-side visit request builder.</span>
+        <span>Showroom venue details updated upon official confirmation.</span>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="../assets/js/site-config.js?v=1.0"></script>
+  <script src="../assets/js/products-data.js?v=1.0"></script>
+  <script src="../assets/js/brands-data.js?v=1.0"></script>
+  <script src="../assets/js/main.js?v=1.0"></script>
+  <script src="../assets/js/visit-form.js?v=1.0"></script>
+</body>
+</html>

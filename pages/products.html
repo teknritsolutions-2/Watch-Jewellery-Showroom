@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="site-root" content="..">
+  <title>Collections &amp; Catalogue | VERONNE</title>
+  <meta name="description" content="Explore 28 illustrative showroom pieces across Gold Jewellery, Diamond Jewellery, Silver Jewellery, and Watches with category-specific filters and detail views.">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('veronne_theme');
+        var d = localStorage.getItem('veronne_dir');
+        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+        if (d === 'rtl' || d === 'ltr') document.documentElement.setAttribute('dir', d);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="../assets/css/style.css?v=1.0">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css?v=1.0">
+  <link rel="stylesheet" href="../assets/css/rtl.css?v=1.0">
+  <link rel="stylesheet" href="../assets/css/products.css?v=1.0">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand-mark" href="../index.html" aria-label="VERONNE Home">
+        <svg class="brand-mark__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <polygon points="24,4 38.1,9.9 44,24 38.1,38.1 24,44 9.9,38.1 4,24 9.9,9.9" stroke="currentColor" stroke-width="1.6"/>
+          <polygon points="24,9 34.6,13.4 39,24 34.6,34.6 24,39 13.4,34.6 9,24 13.4,13.4" stroke="currentColor" stroke-width="0.75" opacity="0.45"/>
+          <path d="M15.5 16L24 33.5L32.5 16" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"/>
+          <circle cx="24" cy="14" r="1.6" fill="#927B57"/>
+        </svg>
+        <span class="brand-mark__wordmark">VERONNE</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <div class="nav-dropdown">
+          <button type="button" class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">
+            <span>Home</span>
+            <svg class="nav-dropdown__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown__menu" role="menu">
+            <a class="nav-dropdown__item" href="../index.html" role="menuitem">
+              <span class="nav-dropdown__title">Home 1 — Showroom Storefront</span>
+              <span class="nav-dropdown__meta">New collections, timepieces &amp; jewellery</span>
+            </a>
+            <a class="nav-dropdown__item" href="./home2.html" role="menuitem">
+              <span class="nav-dropdown__title">Home 2 — Editorial Experience</span>
+              <span class="nav-dropdown__meta">The art of time &amp; adornment</span>
+            </a>
+          </div>
+        </div>
+        <a class="nav-link" href="./about.html">About</a>
+        <a class="nav-link" href="./products.html" aria-current="page">Products</a>
+        <a class="nav-link" href="./brands.html">Brands</a>
+        <a class="nav-link" href="./gifting.html">Gifting</a>
+        <a class="nav-link" href="./contact.html">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="utility-btn js-theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="display:none;" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <span class="js-theme-label">Dark</span>
+        </button>
+        <button type="button" class="utility-btn js-dir-toggle" aria-pressed="false" aria-label="Switch text direction to RTL">
+          <span class="js-dir-label">RTL</span>
+        </button>
+        <a class="btn btn--primary header-cta" href="./contact.html">Visit Showroom</a>
+      </div>
+
+      <button type="button" class="hamburger-btn" id="mobileMenuOpen" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation" aria-hidden="true">
+    <div class="mobile-drawer__head">
+      <a class="brand-mark" href="../index.html">
+        <svg class="brand-mark__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <polygon points="24,4 38.1,9.9 44,24 38.1,38.1 24,44 9.9,38.1 4,24 9.9,9.9" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M15.5 16L24 33.5L32.5 16" stroke="currentColor" stroke-width="1.9" stroke-linecap="square"/>
+          <circle cx="24" cy="14" r="1.6" fill="#927B57"/>
+        </svg>
+        <span class="brand-mark__wordmark">VERONNE</span>
+      </a>
+      <button type="button" class="drawer-close-btn" id="mobileMenuClose" aria-label="Close navigation menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="mobile-drawer__body">
+      <nav class="mobile-nav-list" aria-label="Mobile Menu">
+        <span class="mobile-nav-group-label">Showroom Home</span>
+        <a class="mobile-nav-link" href="../index.html">Home 1 — Storefront</a>
+        <a class="mobile-nav-link" href="./home2.html">Home 2 — Editorial</a>
+        <span class="mobile-nav-group-label">Explore</span>
+        <a class="mobile-nav-link" href="./about.html">About</a>
+        <a class="mobile-nav-link" href="./products.html" aria-current="page">Products</a>
+        <a class="mobile-nav-link" href="./brands.html">Brands</a>
+        <a class="mobile-nav-link" href="./gifting.html">Gifting</a>
+        <a class="mobile-nav-link" href="./contact.html">Contact</a>
+      </nav>
+      <a class="btn btn--primary" href="./contact.html">Visit Showroom</a>
+      <div class="mobile-drawer__utilities">
+        <button type="button" class="utility-btn js-theme-toggle" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="display:none;" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <span class="js-theme-label">Dark</span>
+        </button>
+        <button type="button" class="utility-btn js-dir-toggle" aria-pressed="false">
+          <span class="js-dir-label">RTL</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero__grid">
+        <div class="page-hero__copy">
+          <span class="eyebrow">The Showroom Catalogue</span>
+          <h1 class="display-xl">Fine Jewellery &amp; Timepieces</h1>
+          <p class="lead">
+            Explore our 24-piece illustrative catalogue across Gold Jewellery, Diamond Jewellery, Silver Jewellery, and Wristwatches. Select any piece to inspect full specifications or pre-fill a private viewing enquiry.
+          </p>
+        </div>
+        <div class="media-frame ratio-4-3">
+          <img src="../assets/images/lifestyle/editorial-diamond-neck.jpg" alt="Fine diamond pendant necklace and pavé ring worn together in soft natural light" width="1600" height="1200">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Category Tabs & Accessible Filters -->
+        <div class="catalogue-toolbar" aria-label="Catalogue Filters">
+          <div class="category-tabs" role="group" aria-label="Main Collection Categories">
+            <button type="button" class="category-tab is-active" data-cat-tab="all" aria-pressed="true">All Collections</button>
+            <button type="button" class="category-tab" data-cat-tab="gold" aria-pressed="false">Gold Jewellery</button>
+            <button type="button" class="category-tab" data-cat-tab="diamonds" aria-pressed="false">Diamond Jewellery</button>
+            <button type="button" class="category-tab" data-cat-tab="silver" aria-pressed="false">Silver Jewellery</button>
+            <button type="button" class="category-tab" data-cat-tab="watches" aria-pressed="false">Watches</button>
+          </div>
+
+          <div class="filter-controls-grid">
+            <div class="form-field">
+              <label class="form-label" for="filterSearch">Search Pieces</label>
+              <input class="form-input" type="search" id="filterSearch" placeholder="Search name, material, calibre, ring...">
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="filterSubcategory">Subcategory</label>
+              <select id="filterSubcategory" data-v-select>
+                <option value="all">All Subcategories</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" id="filterSpecLabel" for="filterSpec">Material Focus</label>
+              <select id="filterSpec" data-v-select>
+                <option value="all">All Materials</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="filterSort">Sort By</label>
+              <select id="filterSort" data-v-select>
+                <option value="featured">Featured Order</option>
+                <option value="price-asc">Indicative Price: Low to High</option>
+                <option value="price-desc">Indicative Price: High to Low</option>
+                <option value="name-asc">Name: A to Z</option>
+              </select>
+            </div>
+
+            <div>
+              <button type="button" class="btn btn--outline" id="clearFiltersBtn">Clear Filters</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalogue-status-bar">
+          <p class="catalogue-count" id="catalogueCount" aria-live="polite">Loading pieces...</p>
+          <span style="font-size:0.875rem;color:var(--text-secondary);">Indicative pricing shown for guidance; availability confirmed in salon.</span>
+        </div>
+
+        <div class="product-grid" id="catalogueGrid"></div>
+
+        <div class="empty-state" id="catalogueEmpty" hidden>
+          <h3>No Matching Pieces Found</h3>
+          <p>
+            No items in the current showcase match your selected category, specification, and search terms. Try clearing one or more filters.
+          </p>
+          <button type="button" class="btn btn--primary" id="emptyClearBtn">Reset All Filters</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand-mark" href="../index.html">
+            <svg class="brand-mark__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <polygon points="24,4 38.1,9.9 44,24 38.1,38.1 24,44 9.9,38.1 4,24 9.9,9.9" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M15.5 16L24 33.5L32.5 16" stroke="currentColor" stroke-width="1.9" stroke-linecap="square"/>
+              <circle cx="24" cy="14" r="1.6" fill="#C8B38D"/>
+            </svg>
+            <span class="brand-mark__wordmark">VERONNE</span>
+          </a>
+          <p class="footer-brand__desc">
+            A contemporary watch and fine jewellery showroom dedicated to considered horology, architectural precious metals, and unhurried private consultations.
+          </p>
+        </div>
+        <div>
+          <h3 class="footer-col__title">Showroom</h3>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home 1 — Storefront</a></li>
+            <li><a href="./home2.html">Home 2 — Editorial</a></li>
+            <li><a href="./about.html">About VERONNE</a></li>
+            <li><a href="./brands.html">Watchmakers &amp; Brands</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col__title">Collections</h3>
+          <ul class="footer-links">
+            <li><a href="./products.html">All Pieces</a></li>
+            <li><a href="./products.html?category=gold">Gold Jewellery</a></li>
+            <li><a href="./products.html?category=diamonds">Diamond Jewellery</a></li>
+            <li><a href="./products.html?category=silver">Silver Jewellery</a></li>
+            <li><a href="./products.html?category=watches">Watches</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col__title">Client Services</h3>
+          <ul class="footer-links">
+            <li><a href="./gifting.html">Gifting Guide</a></li>
+            <li><a href="./contact.html">Plan a Showroom Visit</a></li>
+            <li><a href="./contact.html#faq">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-wordmark-band" aria-hidden="true">
+        <div class="footer-wordmark-giant">VERONNE</div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 VERONNE Showroom. Illustrative catalogue showcase.</span>
+        <span>Private viewing requests prepared via the Contact page.</span>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="../assets/js/site-config.js?v=1.0"></script>
+  <script src="../assets/js/products-data.js?v=1.0"></script>
+  <script src="../assets/js/main.js?v=1.0"></script>
+  <script src="../assets/js/product-details.js?v=1.0"></script>
+  <script src="../assets/js/catalogue.js?v=1.0"></script>
+</body>
+</html>

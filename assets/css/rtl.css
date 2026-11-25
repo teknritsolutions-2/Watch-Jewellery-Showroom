@@ -1,0 +1,50 @@
+/* ==========================================================================
+   VERONNE — RTL Support (Logical Flow, Unmirrored Photos & Brand, Left Drawer)
+   ========================================================================== */
+
+html[dir="rtl"] body {
+  direction: rtl;
+}
+
+/* Keep brand mark and photography strictly unmirrored in RTL */
+html[dir="rtl"] .brand-mark,
+html[dir="rtl"] .brand-mark__icon,
+html[dir="rtl"] .media-frame,
+html[dir="rtl"] .media-frame img,
+html[dir="rtl"] .hero-showroom__slides img {
+  direction: ltr;
+  transform: none;
+}
+
+/* Mirror scrim gradient for RTL hero readability */
+html[dir="rtl"] .hero-showroom__scrim {
+  background: linear-gradient(
+    270deg,
+    rgba(11, 12, 14, 0.84) 0%,
+    rgba(11, 12, 14, 0.58) 46%,
+    rgba(11, 12, 14, 0.24) 100%
+  );
+}
+
+/* Preserve physical-left drawer behavior in BOTH LTR and RTL */
+html[dir="rtl"] .mobile-drawer {
+  left: 0;
+  right: auto;
+  border-left: 0;
+  border-right: 1px solid var(--border-subtle);
+  transform: translateX(-100%);
+}
+
+html[dir="rtl"] .mobile-drawer.is-open {
+  transform: translateX(0);
+}
+
+/* Flip directional arrow icons inside links/buttons when appropriate */
+html[dir="rtl"] .icon-directional {
+  transform: scaleX(-1);
+}
+
+/* Ensure custom dropdown panels align cleanly in RTL */
+html[dir="rtl"] .v-select-panel {
+  direction: rtl;
+}
