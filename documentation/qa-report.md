@@ -32,6 +32,8 @@
 7. **Footer Cleanup**: Removed `.footer-wordmark-band` and `.footer-wordmark-giant` across all 7 pages and `assets/css/style.css`, simplified Home links to `Home 1` / `Home 2`, and replaced `"About VERONNE"` with `"About"`.
 8. **Site-Wide Image Uniqueness & Compact Framing**: Audited all 7 HTML files and `assets/js/products-data.js` (`Duplicate images across site: 0`, `79` distinct photographs total) and shifted tall portrait editorial/category frames on Home 1 and Home 2 to `4:3` landscape photography.
 9. **Dropdown Viewport Bounds & Tablet Grids**: Clamped `VeronneSelect.positionPanel` height strictly to available viewport space below the sticky header (`<= 320px` and never forced above available space), and preserved 2-col diptych and 3-col occasion grid balance on `768px`–`1024px` tablets.
+10. **Tablet Hero Picture Gap Fix (`Home 1`)**: Eliminated extra bottom gap inside `.hero-slide__picture` at tablet breakpoints (`<= 1024px`) by clearing unintended grid/line-height whitespace.
+11. **Tablet & Mobile Background-Image Hero Banners (`Home 2` & Interior Pages)**: Converted `.editorial-hero` (`pages/home2.html`) and `.page-hero` (`pages/about.html`, `pages/products.html`, `pages/brands.html`, `pages/gifting.html`, `pages/contact.html`) below `1024px` into full-bleed background-image banners with dark directional scrims (both LTR and RTL) while keeping the 2-column split hero untouched on desktop (`>= 1025px`). Visually verified via Chromium CDP screenshots across `768×1024`, `390×844`, and `1440×900`.
 
 ## Remaining Production Limitations
 

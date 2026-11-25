@@ -26,6 +26,18 @@ html[dir="rtl"] .hero-showroom__scrim {
   );
 }
 
+@media (max-width: 1024px) {
+  html[dir="rtl"] .page-hero::after,
+  html[dir="rtl"] .editorial-hero::after {
+    background: linear-gradient(
+      270deg,
+      rgba(11, 12, 14, 0.88) 0%,
+      rgba(11, 12, 14, 0.72) 56%,
+      rgba(11, 12, 14, 0.42) 100%
+    );
+  }
+}
+
 /* Preserve physical-left drawer behavior in BOTH LTR and RTL */
 html[dir="rtl"] .mobile-drawer {
   left: 0;
